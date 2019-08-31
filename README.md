@@ -181,7 +181,7 @@ eThisIsOnlyAnExampleDoNotBother9
 From this moment you use Firewall rules to direct traffic from your IPs/networks/interfaces to either WAN gateway (for direct ISP connection) or VPN client gateway for VPN access.
 I especially do not define any steps for further configuration because some pfSense version behave little bit different here and everyone's setup would be different, so you should play a bit with rules, learn how they affect your network and you will be rewarded eventually with pretty good skills and understanding of the whole picture.
 
-#### Sources: [Setup pfSense as an OpenVPN client for specific devices by Tai Toh]
-(https://forum.level1techs.com/t/whole-network-vpn-with-pfsense-router-level-one-techs/114309)
-(http://www.pixelsandwidgets.com/2014/10/setup-pfsense-openvpn-client-specific-devices/)
-(https://nordvpn.com/tutorials/pfsense/pfsense-openvpn/)
+#### Sources:
+[Level1techs](https://forum.level1techs.com/t/whole-network-vpn-with-pfsense-router-level-one-techs/114309)
+[pixelsandwidgets](http://www.pixelsandwidgets.com/2014/10/setup-pfsense-openvpn-client-specific-devices/)
+[NordVPN](https://nordvpn.com/tutorials/pfsense/pfsense-openvpn/)
