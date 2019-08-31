@@ -7,9 +7,6 @@ This setup becomes extremely handy for use with applications which are not aware
 
 
 > **Note**: We will be working with pfSense Version 2.4.4, but this tutorial should also apply to all other versions
-Known bugs > 2.4.4:
-(https://forum.pfsense.org/index.php?topic=80607.0)
-(https://redmine.pfsense.org/issues/3760)
 
 
 ## Configuration
@@ -184,4 +181,7 @@ eThisIsOnlyAnExampleDoNotBother9
 From this moment you use Firewall rules to direct traffic from your IPs/networks/interfaces to either WAN gateway (for direct ISP connection) or VPN client gateway for VPN access.
 I especially do not define any steps for further configuration because some pfSense version behave little bit different here and everyone's setup would be different, so you should play a bit with rules, learn how they affect your network and you will be rewarded eventually with pretty good skills and understanding of the whole picture.
 
-#### Source: [Setup pfSense as an OpenVPN client for specific devices by Tai Toh](http://www.pixelsandwidgets.com/2014/10/setup-pfsense-openvpn-client-specific-devices/)
+#### Sources: [Setup pfSense as an OpenVPN client for specific devices by Tai Toh]
+(https://forum.level1techs.com/t/whole-network-vpn-with-pfsense-router-level-one-techs/114309)
+(http://www.pixelsandwidgets.com/2014/10/setup-pfsense-openvpn-client-specific-devices/)
+(https://nordvpn.com/tutorials/pfsense/pfsense-openvpn/)
