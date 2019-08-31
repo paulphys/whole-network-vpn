@@ -5,16 +5,19 @@ One of the most powerful features of pfSense is it’s ability to direct your da
 
 This setup becomes extremely handy for use with applications which are not aware of OpenVPN protocol, eg. download managers, torrent clients, etc. Expecting privacy you should be positive that traffic won't go through your ISP's gateway in case of failure on side of VPN provider. And obviously OpenVPN client should automatically reconnect as soon as service goes live again.
 
-> **Note**: This How-To is meant for pfSense 2.1.x. For those using 2.2 Beta, there is a bug that prevents this from working.  Read about here in the pfSense forum thread, “[cannot NAT trough OPT1 interface on multiwan](https://forum.pfsense.org/index.php?topic=80607.0)”.  The bug has been filed in [redmine](https://redmine.pfsense.org/issues/3760) and at the time of this writing, it has been fixed for IPv4 traffic.
 
-> **Note**: By the time of editing, in 2.2.4-RELEASE version of pfSense the only way to route traffic through OpenVPN client seems to be `"redirect-gateway def1"` advanced option, which redirects absolutely all traffic and pfSense default gateway becomes the same thing with OpenVPN client's gateway and not the ISP's one. There is a way to still route traffic to ISP avoiding VPN tunnel. Basically, in such case pfSense becomes an OpenVPN client for it's whole LAN subnet. This fact makes it clunky to use this guide on a main router because for each firewall rule you need to change default gateway to the right one. This why I use a separate pfSense virtual machine on a Proxmox server to provide VPN access for specific virtual machines using dedicated virtual subnet. Needles to say that I could also assign a physical interface for such purpose for use on some physical machines.
+> **Note**: We will be working with pfSense Version 2.4.4, but this tutorial should also apply to all other versions
+Known bugs > 2.4.4:
+(https://forum.pfsense.org/index.php?topic=80607.0)
+(https://redmine.pfsense.org/issues/3760)
+
 
 ## Configuration
 
 #### Configure certificates:
 
 * Go to `System` > `Cert Manager`
-* In the `CAs` tab, click the `+` icon to add a new Certificate Authority
+* In the `CAs` tab, click the `+ Add` icon to add a new Certificate Authority
 * Fill in a `Descriptive name` like “[VPN PROVIDER] CA”
 * Copy and paste `Certificate data`. It can be found in one of two `.crt` files, provided by VPN service. In some cases `.ovpn` file may include Certificate Authority information between `<ca>...</ca>` tags. **Do not** include this tags. All certificates going into pfSense should have similar format:
 ```
@@ -134,7 +137,7 @@ eThisIsOnlyAnExampleDoNotBother9
 * Go to `Status` > `System Logs`
 * Select the `OpenVPN` tab.
 * Verify that you have successfully connected.
- Specifically look for `Initialization Sequence Completed` statement. It may be anywhere between other log entries but should be tagged with time when you clicked `Save` on client configuration tab. 
+ Specifically look for `Initialization Sequence Completed` statement. It may be anywhere between other log entries but should be tagged with time when you clicked `Save` on client configuration tab.
  If you don’t see it, it means you are not connected.  Check your configuration again. Use the log to look for errors.  These are probably flags in your advance options or encryption settings. Double check that you pasted right certificates and keys.
 
 #### Configure OpenVPN gateway interface:
@@ -153,7 +156,7 @@ eThisIsOnlyAnExampleDoNotBother9
 * Look for `[VPN Provider name]` entry in `Interfaces` table
  (Alternatively `Status` > `Interfaces`)
 * Verify that you have an IP Address for your VPN.
-* If no, try going to `Status` > `Services` and restarting OpenVPN service by clicking the play button next to `OpenVPN client: [VPN Provider name]` 
+* If no, try going to `Status` > `Services` and restarting OpenVPN service by clicking the play button next to `OpenVPN client: [VPN Provider name]`
 >**Note:** you may want to have OpenVPN table on dashboard to see client connection status. Click `+` icon right under `Status: Dashboard` header at the top of page, select `OpenVPN` and click `Save Settings` button.
 
 * Go to `System` > `Routing`
