@@ -1,7 +1,7 @@
 # Whole-network OpenVPN with pfSense
 
 ## Introduction
-One of the most powerful features of pfSense is it’s ability to direct your data requests through different end-points using NAT rules. pfSense is amazing as an OpenVPN client because it can selectively route any device on the network through the VPN service (i.e., my tablets and TV go through US servers, while my smartphone, VoIP, computers go my local ISP).
+One of the most powerful features of pfSense is it’s ability to direct your data requests through different end-points using NAT rules. pfSense is amazing as an OpenVPN client because it can selectively route any device on the network through the VPN service.
 
 This setup becomes extremely handy for use with applications which are not aware of OpenVPN protocol, eg. download managers, torrent clients, etc. Expecting privacy you should be positive that traffic won't go through your ISP's gateway in case of failure on side of VPN provider. And obviously OpenVPN client should automatically reconnect as soon as service goes live again.
 
