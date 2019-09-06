@@ -84,7 +84,7 @@ brc4OSiSKdeskaqGQgWaObJCdsnB
 * Go to `VPN` > `OpenVPN`
 * Click the `Client` tab.
 * Click the `+` icon to add a new client.
-> **Note:** Most of the settings on this tab totally depend on VPN provider.
+> **Note:** Most of the settings on this tab totally depend on VPN provider. For NordVPN, do the following:
 
  These are important for the how-to:
 * `Interface` set to `WAN` interface.
