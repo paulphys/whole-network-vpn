@@ -181,6 +181,9 @@ eThisIsOnlyAnExampleDoNotBother9
 From this moment you use Firewall rules to direct traffic from your IPs/networks/interfaces to either WAN gateway (for direct ISP connection) or VPN client gateway for VPN access.
 I especially do not define any steps for further configuration because some pfSense version behave little bit different here and everyone's setup would be different, so you should play a bit with rules, learn how they affect your network and you will be rewarded eventually with pretty good skills and understanding of the whole picture.
 
+## NAT rules for latency-sensitive applications
+
+
 #### Sources:
 -[Level1techs](https://forum.level1techs.com/t/whole-network-vpn-with-pfsense-router-level-one-techs/114309)
 
