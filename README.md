@@ -1,7 +1,7 @@
 # Whole-network OpenVPN with pfSense
 
 ## Introduction
-- Why ? What are the benefits of running OpenVPN on the router level?
+> *Why ? What are the benefits of running OpenVPN on the router level?*
 
 Well, this question is rather easy to answer. Instead of having to download and configure OpenVPN clients on each of your devices you can just configure it once on your pfSense router and never have to worry about browsing unprotected.
 Other benefits of running OpenVPN on the router level include, higher level of access and customizability, your device no longer has to use its processing power to encrypt and decrypt traffic, increased security and usability.
@@ -17,8 +17,8 @@ This setup becomes extremely handy for use with applications which are not aware
 
 ### Download OpenVPN configuration files
 Here are some links to the configuration files for the most popular VPN Providers:
- [NordVPN]: https://nordvpn.com/ovpn/
- [ExpressVPN]: https://www.expressvpn.com/support/vpn-setup/pfsense-with-expressvpn-openvpn/#download
+ [NordVPN]: (https://nordvpn.com/ovpn/)
+ [ExpressVPN]: (https://www.expressvpn.com/support/vpn-setup/pfsense-with-expressvpn-openvpn/#download)
  [IPVanish]: https://www.ipvanish.com/software/configs/
  [Surfshark]: https://account.surfshark.com/setup/manual
  [CyberGhost]: https://support.cyberghostvpn.com/hc/en-us/articles/213811885-Router-How-to-configure-OpenVPN-for-flashed-DD-WRT-routers
