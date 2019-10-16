@@ -18,11 +18,17 @@ This setup becomes extremely handy for use with applications which are not aware
 ### Download OpenVPN configuration files
 Here are some links to the configuration files for the most popular VPN Providers:
  [NordVPN](https://nordvpn.com/ovpn/)
+ 
  [ExpressVPN](https://www.expressvpn.com/support/vpn-setup/pfsense-with-expressvpn-openvpn/#download)
+ 
  [IPVanish](https://www.ipvanish.com/software/configs/)
+ 
  [Surfshark](https://account.surfshark.com/setup/manual)
+ 
  [CyberGhost](https://support.cyberghostvpn.com/hc/en-us/articles/213811885-Router-How-to-configure-OpenVPN-for-flashed-DD-WRT-routers)
+ 
  [StrongVPN](https://support.strongvpn.com/hc/en-us/articles/360011443953-DD-WRT-OpenVPN-Auto-Installer-Guide)
+ 
  [PIA](https://www.privateinternetaccess.com/helpdesk/kb/articles/where-can-i-find-your-ovpn-files)
 
 Hosting your own OpenVPN server?:
