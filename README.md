@@ -206,25 +206,36 @@ From this moment you use Firewall rules to direct traffic from your IPs/networks
 I especially do not define any steps for further configuration because some pfSense version behave little bit different here and everyone's setup would be different, so you should play a bit with rules, learn how they affect your network and you will be rewarded eventually with pretty good skills and understanding of the whole picture.
 
 ## NAT rules for latency-sensitive applications
-* Steam
+> Steam
 
 UDP 27000 to 27015 inclusive (Game client traffic)
+
 UDP 27015 to 27030 inclusive (Typically Matchmaking and HLTV)
+
 TCP 27014 to 27050 inclusive (Steam downloads)
+
 UDP 4380
 
 Dedicated or Listen Servers
+
 TCP 27015 (SRCDS Rcon port)
 
 Steamworks P2P Networking and Steam Voice Chat
+
 UDP 3478 (Outbound)
+
 UDP 4379 (Outbound)
+
 UDP 4380 (Outbound)
 
 Additional Ports for Call of Duty: Modern Warfare 2 Multiplayer
+
 UDP 1500 (outbound)
+
 UDP 3005 (outbound)
+
 UDP 3101 (outbound)
+
 UDP 28960
 
 #### Sources:
