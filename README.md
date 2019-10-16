@@ -1,7 +1,11 @@
 # Whole-network OpenVPN with pfSense
 
 ## Introduction
-One of the most powerful features of pfSense is it’s ability to direct your data requests through different end-points using NAT rules. pfSense is amazing as an OpenVPN client because it can selectively route any device on the network through the VPN service.
+Why ? What are the benefits of running OpenVPN on the router level?
+
+Well, this question is rather easy to answer. Instead of having to download and configure OpenVPN clients on each of your devices you can just configure it once on your pfSense router and never have to worry about browsing unprotected.
+Other benefits of running OpenVPN on the router level include,higher level of access and customizability, your device no longer have to use its processing power to encrypt and decrypt traffic, increased security and usability.
+One of the most powerful features of pfSense is it’s ability to direct your data requests through different end-points using NAT rules. pfSense is amazing as an OpenVPN client because it can selectively route any device on the network through the VPN service. We'll cover NAT rules for latency-sensitive applications further on in this guide.
 
 This setup becomes extremely handy for use with applications which are not aware of OpenVPN protocol, eg. download managers, torrent clients, etc. Expecting privacy you should be positive that traffic won't go through your ISP's gateway in case of failure on side of VPN provider. And obviously OpenVPN client should automatically reconnect as soon as service goes live again.
 
@@ -10,6 +14,19 @@ This setup becomes extremely handy for use with applications which are not aware
 
 
 ## Configuration
+
+### Download OpenVPN configuration files
+Here are some links to the configuration files for the most popular VPN Providers:
+* [NordVPN]: https://nordvpn.com/ovpn/
+* [ExpressVPN]: https://www.expressvpn.com/support/vpn-setup/pfsense-with-expressvpn-openvpn/#download
+* [IPVanish]: https://www.ipvanish.com/software/configs/
+* [Surfshark]: https://account.surfshark.com/setup/manual
+* [CyberGhost]: https://support.cyberghostvpn.com/hc/en-us/articles/213811885-Router-How-to-configure-OpenVPN-for-flashed-DD-WRT-routers
+* [StrongVPN]: https://support.strongvpn.com/hc/en-us/articles/360011443953-DD-WRT-OpenVPN-Auto-Installer-Guide
+* [PIA]: https://www.privateinternetaccess.com/helpdesk/kb/articles/where-can-i-find-your-ovpn-files
+
+Hosting your own OpenVPN server?:
+* [Check out this guide]: https://openvpn.net/community-resources/setting-up-your-own-certificate-authority-ca/
 
 #### Configure certificates:
 
@@ -182,7 +199,26 @@ From this moment you use Firewall rules to direct traffic from your IPs/networks
 I especially do not define any steps for further configuration because some pfSense version behave little bit different here and everyone's setup would be different, so you should play a bit with rules, learn how they affect your network and you will be rewarded eventually with pretty good skills and understanding of the whole picture.
 
 ## NAT rules for latency-sensitive applications
+* Steam
 
+UDP 27000 to 27015 inclusive (Game client traffic)
+UDP 27015 to 27030 inclusive (Typically Matchmaking and HLTV)
+TCP 27014 to 27050 inclusive (Steam downloads)
+UDP 4380
+
+Dedicated or Listen Servers
+TCP 27015 (SRCDS Rcon port)
+
+Steamworks P2P Networking and Steam Voice Chat
+UDP 3478 (Outbound)
+UDP 4379 (Outbound)
+UDP 4380 (Outbound)
+
+Additional Ports for Call of Duty: Modern Warfare 2 Multiplayer
+UDP 1500 (outbound)
+UDP 3005 (outbound)
+UDP 3101 (outbound)
+UDP 28960
 
 #### Sources:
 -[Level1techs](https://forum.level1techs.com/t/whole-network-vpn-with-pfsense-router-level-one-techs/114309)
