@@ -1,10 +1,10 @@
 # Whole-network OpenVPN with pfSense
 
 ## Introduction
-Why ? What are the benefits of running OpenVPN on the router level?
+- Why ? What are the benefits of running OpenVPN on the router level?
 
 Well, this question is rather easy to answer. Instead of having to download and configure OpenVPN clients on each of your devices you can just configure it once on your pfSense router and never have to worry about browsing unprotected.
-Other benefits of running OpenVPN on the router level include,higher level of access and customizability, your device no longer have to use its processing power to encrypt and decrypt traffic, increased security and usability.
+Other benefits of running OpenVPN on the router level include, higher level of access and customizability, your device no longer has to use its processing power to encrypt and decrypt traffic, increased security and usability.
 One of the most powerful features of pfSense is it’s ability to direct your data requests through different end-points using NAT rules. pfSense is amazing as an OpenVPN client because it can selectively route any device on the network through the VPN service. We'll cover NAT rules for latency-sensitive applications further on in this guide.
 
 This setup becomes extremely handy for use with applications which are not aware of OpenVPN protocol, eg. download managers, torrent clients, etc. Expecting privacy you should be positive that traffic won't go through your ISP's gateway in case of failure on side of VPN provider. And obviously OpenVPN client should automatically reconnect as soon as service goes live again.
