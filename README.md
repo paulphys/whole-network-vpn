@@ -199,8 +199,6 @@ eThisIsOnlyAnExampleDoNotBother9
 > **Note:** rules for VPN interface should follow the corresponding for WAN interface. Order is crucial here. That is the reason we are not able to use "convinient" `Hybrid Outbound NAT rule generation
 (Automatic Outbound NAT + rules below)`. As it stated on the bottom of the page: "If hybrid outbound NAT is selected, mappings you specify on this page will be used, followed by the automatically generated ones."
 
-> **Note:** Rule of thumb: final NAT mappings table should have 4 rules for each interface on the system except OpenVPN client's one (eg. 4x WAN + 4x LAN) (Theoretically, you may configure more then one OpenVPN client on single pfSense, but since `“redirect-gateway def1”` option redirects all the traffic, I don't believe in success of such setups).
-
 #### Configure firewall:
 From this moment you use Firewall rules to direct traffic from your IPs/networks/interfaces to either WAN gateway (for direct ISP connection) or VPN client gateway for VPN access.
 I especially do not define any steps for further configuration because some pfSense version behave little bit different here and everyone's setup would be different, so you should play a bit with rules, learn how they affect your network and you will be rewarded eventually with pretty good skills and understanding of the whole picture.
